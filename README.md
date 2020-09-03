@@ -11,6 +11,6 @@ how to use
 ```python
 from bingsearchpy import bingsearch
 for i in bingsearch.engine.search('the most beautiful place in the world'):
-    print(i['title'], i['link'], i['description'])
+    print(i['title'], i['link'])
 ```
 that's it all 😎
