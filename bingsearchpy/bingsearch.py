@@ -1,8 +1,8 @@
 import requests, json, random
 from bs4 import BeautifulSoup
-from msnsearch.useragent import useragent
+from bingsearchpy.useragent import useragent
 
-class MsnSearch:
+class BingSearch:
 
     def __init__(self):
         self.data = []
@@ -59,6 +59,6 @@ class MsnSearch:
         return res
 
 if __name__ != "__main__":
-    engine = MsnSearch()
+    engine = BingSearch()
 else:
     pass

@@ -1,1 +1,1 @@
-from bingsearch.bingsearch import MsnSearch
+from bingsearchpy.bingsearch import BingSearch
