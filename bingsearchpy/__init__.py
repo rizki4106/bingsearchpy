@@ -1,0 +1,1 @@
+from bingsearch.bingsearch import MsnSearch

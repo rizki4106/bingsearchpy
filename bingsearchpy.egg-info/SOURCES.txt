@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+bingsearchpy/__init__.py
+bingsearchpy/bingsearch.py
+bingsearchpy/useragent.py
+bingsearchpy.egg-info/PKG-INFO
+bingsearchpy.egg-info/SOURCES.txt
+bingsearchpy.egg-info/dependency_links.txt
+bingsearchpy.egg-info/requires.txt
+bingsearchpy.egg-info/top_level.txt

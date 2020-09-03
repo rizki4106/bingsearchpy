@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: bingsearchpy
+Version: 0.1
+Summary: bing searc engine for python
+Home-page: https://github.com/rizki4106/bingsearchpy
+Author: mrxxx04
+Author-email: rizkimaulana348@gmail.com
+License: MIT
+Download-URL: https://github.com/rizki4106/bingsearch.py/archive/v_01.tar.gz
+Description: UNKNOWN
+Keywords: google,msn,searchengine,microsoft,google
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
