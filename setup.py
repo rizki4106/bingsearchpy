@@ -8,7 +8,7 @@ setup(
   author = 'mrxxx04',
   author_email = 'rizkimaulana348@gmail.com',
   url = 'https://github.com/rizki4106/bingsearchpy',
-  download_url = 'https://github.com/rizki4106/bingsearch.py/archive/v_01.tar.gz',
+  download_url = 'https://github.com/rizki4106/bingsearchpy/archive/v.0.1.zip',
   keywords = ['google','msn','searchengine', 'microsoft', 'google'],
   install_requires=[
           'requests',
