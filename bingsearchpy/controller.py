@@ -79,3 +79,20 @@ class Controller:
                     yield res
                 except:
                     pass
+    
+    # search video
+
+    def get_video(self, query):
+        
+        # get video in 20 pages
+        for i in range(1,20):
+            url = 'https://www.bing.com/images/search?q={}&first={}&scenario=ImageBasicHover'.format(query, str(i))
+            req = requests.get(url, headers={'User-Agent': useragent[self.user_agent]})
+            soup = BeautifulSoup(req.content, 'html.parser')
+            for data in soup.find_all('div', class_ = 'mc_vtvc_meta'):
+                try:
+                    res = {}
+                    res['link'] = data.find('div', class_ = 'vrhdata').attrs['vrhm'].split('pgurl')
+                    print(res)
+                except:
+                    pass
