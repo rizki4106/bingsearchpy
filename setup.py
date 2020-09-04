@@ -1,12 +1,11 @@
 from distutils.core import setup
+
 setup(
   name = 'bingsearchpy',
   packages = ['bingsearchpy'],
-  version = '0.2',
-  license='MIT',
+  version = '0.3',
   description= 'bing search engine for python',
-  long_description=README,
-  long_description_content="text/markdown",
+  license='MIT',
   author = 'mrxxx04',
   author_email = 'rizkimaulana348@gmail.com',
   url = 'https://github.com/rizki4106/bingsearchpy',

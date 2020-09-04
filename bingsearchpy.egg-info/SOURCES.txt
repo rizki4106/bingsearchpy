@@ -3,6 +3,7 @@ setup.cfg
 setup.py
 bingsearchpy/__init__.py
 bingsearchpy/bingsearch.py
+bingsearchpy/controller.py
 bingsearchpy/useragent.py
 bingsearchpy.egg-info/PKG-INFO
 bingsearchpy.egg-info/SOURCES.txt

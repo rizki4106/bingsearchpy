@@ -1,7 +1,7 @@
 ## bingsearchpy
 bing search engine for python.
-<hr/>
-installation
+
+### installation
 
 ```python 
 pip install bingsearchpy
