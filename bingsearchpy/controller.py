@@ -1,6 +1,7 @@
 import requests, json, random
 from bs4 import BeautifulSoup
 from bingsearchpy.useragent import useragent
+from time import sleep
 
 
 class Controller:
@@ -73,26 +74,32 @@ class Controller:
             req = requests.get(url, headers={'User-Agent': useragent[self.user_agent]})
             soup = BeautifulSoup(req.content, 'html.parser')
             for data in soup.find_all('div', class_ = 'imgpt'):
-                try:
-                    res = {}
-                    res['link'] = data.find('a').attrs['m'].split('murl')[1].split('"')[2]
-                    yield res
-                except:
-                    pass
+                res = {}
+                main_component = data.find('a').attrs['m']
+                res['link'] = main_component.split('murl')[1].split('"')[2]
+                res['title'] = main_component.split('desc')[1].split('"')[2]
+                yield res
+                
     
     # search video
 
     def get_video(self, query):
-        
+        """
+        searching for video
+        """
         # get video in 20 pages
         for i in range(1,20):
-            url = 'https://www.bing.com/images/search?q={}&first={}&scenario=ImageBasicHover'.format(query, str(i))
+            url = 'https://www.bing.com/videos/search?q={}&first={}'.format(query, str(i))
             req = requests.get(url, headers={'User-Agent': useragent[self.user_agent]})
             soup = BeautifulSoup(req.content, 'html.parser')
-            for data in soup.find_all('div', class_ = 'mc_vtvc_meta'):
+            for data in soup.find_all('div', class_ = 'mc_vtvc_con_rc'):
                 try:
                     res = {}
-                    res['link'] = data.find('div', class_ = 'vrhdata').attrs['vrhm'].split('pgurl')
-                    print(res)
+                    main_component = data.find('div', class_ = 'vrhdata').attrs['vrhm']
+                    res['title'] = main_component.split("vt")[1].split('"')[2]
+                    res['snippet_video'] = main_component.split("smturl")[1].split('"')[2]
+                    res['detail_video'] = main_component.split('pgurl')[1].split('"')[2]
+                    yield res
                 except:
                     pass
+                    

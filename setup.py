@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
   name = 'bingsearchpy',
   packages = ['bingsearchpy'],
-  version = '0.3',
+  version = '0.4',
   description= 'bing search engine for python',
   license='MIT',
   author = 'mrxxx04',
