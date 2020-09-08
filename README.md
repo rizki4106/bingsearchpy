@@ -10,7 +10,7 @@ pip install bingsearchpy
 
 - get random data
 ```python
-from bingsearchpy.bingsearch import engine
+from bingsearchpy import engine
 
 for i in engine.search('the most beautiful place in the world'):
     print(i['title'], i['link'])
@@ -23,7 +23,7 @@ for i in engine.search('the most beautiful place in the world'):
 - get image
 
 ```python
-from bingsearchpy.bingsearch import engine
+from bingsearchpy import engine
 
 for i in engine.search_image('bali'):
     print(i['title'], i['link'])
@@ -35,7 +35,7 @@ for i in engine.search_image('bali'):
 
 - get video
 ```python
-from bingsearchpy.bingsearch import engine
+from bingsearchpy import engine
 
 for i in engine.search_video('bandung'):
     print(i['title'], i['snippet_video'], i['detail_video'])
