@@ -2,6 +2,9 @@ from bingsearchpy.controller import Controller
 
 
 class BingSearch(Controller):
+    """
+    for documentation please visit https://github.com/rizki4106/bingsearchpy
+    """
 
     def search(self, query):
         """
