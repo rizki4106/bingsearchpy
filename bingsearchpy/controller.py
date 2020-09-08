@@ -1,8 +1,6 @@
 import requests, json, random
 from bs4 import BeautifulSoup
 from bingsearchpy.useragent import useragent
-from time import sleep
-
 
 class Controller:
 
@@ -26,9 +24,9 @@ class Controller:
         """
         used for request data and DO NOT USE this method directly from your code
         """
-        no = random.randint(0,len(useragent) - 1)
-        user_agent = useragent[no]
         try:
+            no = random.randint(0,len(useragent) - 1)
+            user_agent = useragent[no]
             # get total search result
             self.get_total_page(url)
 
@@ -59,8 +57,8 @@ class Controller:
                     list_data['link']   = main.attrs['href']
                     yield list_data
 
-        except:
-            pass
+        except Exception as err:
+            print('There is an error : ', err)
 
     
     # search image

@@ -1,1 +1,1 @@
-from bingsearchpy.bingsearch import BingSearch
+from .bingsearch import engine

@@ -4,7 +4,7 @@ setup(
   name = 'bingsearchpy',
   packages = ['bingsearchpy'],
   version = '0.4',
-  description= 'bing search engine for python',
+  description=('bing search engine for python'),
   license='MIT',
   author = 'mrxxx04',
   author_email = 'rizkimaulana348@gmail.com',
