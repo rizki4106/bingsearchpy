@@ -1,6 +1,6 @@
-Metadata-Version: 1.1
+Metadata-Version: 2.1
 Name: bingsearchpy
-Version: 0.3
+Version: 0.6
 Summary: bing search engine for python
 Home-page: https://github.com/rizki4106/bingsearchpy
 Author: mrxxx04
@@ -9,8 +9,8 @@ License: MIT
 Download-URL: https://github.com/rizki4106/bingsearchpy/archive/v.0.1.zip
 Description: ## bingsearchpy
         bing search engine for python.
-        <hr/>
-        installation
+        
+        ### installation
         
         ```python 
         pip install bingsearchpy
@@ -18,22 +18,44 @@ Description: ## bingsearchpy
         #### how to use
         
         - get random data
-        
         ```python
-        from bingsearchpy.bingsearch import engine
+        from bingsearchpy import engine
         
         for i in engine.search('the most beautiful place in the world'):
             print(i['title'], i['link'])
         ```
+        | data | description |
+        |------|-------------|
+        | title | title of websites |
+        | link | website's link |
         
         - get image
         
         ```python
-        from bingsearchpy.bingsearch import engine
+        from bingsearchpy import engine
         
         for i in engine.search_image('bali'):
-            print(i['link'])
+            print(i['title'], i['link'])
         ```
+        | data | description |
+        |------|-------------|
+        | title | image's name |
+        | link | image's source |
+        
+        - get video
+        ```python
+        from bingsearchpy import engine
+        
+        for i in engine.search_video('bandung'):
+            print(i['title'], i['snippet_video'], i['detail_video'])
+        ```
+        | data | description |
+        |------|-------------|
+        | title | video's name |
+        | snippet_video | short video |
+        | detail_video | the place of origin of the video |
+        
+        
         that's it all 😎
         
 Keywords: google,msn,searchengine,microsoft,google
@@ -46,3 +68,4 @@ Classifier: Programming Language :: Python :: 3
 Classifier: Programming Language :: Python :: 3.4
 Classifier: Programming Language :: Python :: 3.5
 Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown

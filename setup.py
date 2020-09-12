@@ -1,10 +1,18 @@
-from distutils.core import setup
+from setuptools import setup
+
+def readme():
+  with open('README.md') as f:
+    README = f.read()
+    return README
+
 
 setup(
   name = 'bingsearchpy',
   packages = ['bingsearchpy'],
-  version = '0.5',
+  version = '0.6',
   description=('bing search engine for python'),
+  long_description=readme(),
+  long_description_content_type="text/markdown",
   license='MIT',
   author = 'mrxxx04',
   author_email = 'rizkimaulana348@gmail.com',
