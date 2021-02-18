@@ -9,7 +9,7 @@ def readme():
 setup(
   name = 'bingsearchpy',
   packages = ['bingsearchpy'],
-  version = '0.6',
+  version = '0.7',
   description=('bing search engine for python'),
   long_description=readme(),
   long_description_content_type="text/markdown",
