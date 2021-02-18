@@ -11,44 +11,46 @@ class Controller:
 
     def get_total_page(self, url):
 
-        req = requests.get(url, headers={"User-Agent": useragent[self.user_agent]}).content
-        soup = BeautifulSoup(req, 'html.parser')
-        result_count = soup.find('span', class_ = 'sb_count').get_text().split(' ')[0].split(',')
-        pages_count = ''
-        for page in result_count:
-            pages_count += str(page)
-        self.page = int(pages_count)
+        try:
+
+            req = requests.get(url, headers={"User-Agent": useragent[self.user_agent]}).content
+            soup = BeautifulSoup(req, 'html.parser')
+            result_count = soup.find('span', class_ = 'sb_count').get_text().split(' ')[0].split(',')
+            pages_count = ''
+            for page in result_count:
+                pages_count += str(page)
+            self.page = int(pages_count)
+        except:
+            pass
 
     
     def request_data(self, url):
         """
         used for request data and DO NOT USE this method directly from your code
         """
-        try:
-            no = random.randint(0,len(useragent) - 1)
-            user_agent = useragent[no]
-            # get total search result
-            self.get_total_page(url)
+        no = random.randint(0,len(useragent) - 1)
+        user_agent = useragent[no]
+        # get total search result
+        self.get_total_page(url)
 
-            # handling large data
-            repeat = 0
-            if self.page >= 20:
-                repeat = 20
-            else:
-                repeat = self.page
+        # handling large data
+        repeat = 0
+        if self.page >= 20:
+            repeat = 20
+        else:
+            repeat = self.page
 
-            # generating search result
-            for i in range(1,repeat):
-                # request data
-                
-                req = requests.get(url + "&first=" + str(i), headers={"User-Agent": user_agent}).content
+        # generating search result
+        for i in range(1,repeat):
+            # request data
+            
+            req = requests.get(url + "&first=" + str(i), headers={"User-Agent": user_agent}).content
 
-                # start scraping data
-                soup = BeautifulSoup(req, 'html.parser')
-                result_count = soup.find('span', class_ = 'sb_count').get_text().split(' ')[0].split(',')
+            # start scraping data
+            soup = BeautifulSoup(req, 'html.parser')
 
-                # parsing data ( title, link, description )
-
+            # parsing data ( title, link, description )
+            try:
                 for data in soup.find_all(class_ = 'b_algo'):
                     main = data.find('h2').find('a')
                     list_data = {}
@@ -56,10 +58,8 @@ class Controller:
                     list_data['title']  = main.get_text()
                     list_data['link']   = main.attrs['href']
                     yield list_data
-
-        except Exception as err:
-            print('There is an error : ', err)
-
+            except:
+                pass
     
     # search image
     def get_image(self, query):
